@@ -1,0 +1,26 @@
+<EntityDescriptor ID="SM9fdce528597140770e91fe27c8d04788383311b68d" entityID="JCI-SAML2-IDP" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+    <IDPSSODescriptor WantAuthnRequestsSigned="false" ID="SM1672f9960676b6ddfc071cd06244197643bf02c1b69" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <KeyDescriptor use="signing">
+            <ns1:KeyInfo Id="SM308485790097229f351090b4545e07cc065463cd4b" xmlns:ns1="http://www.w3.org/2000/09/xmldsig#">
+                <ns1:X509Data>
+                    <ns1:X509IssuerSerial>
+                        <ns1:X509IssuerName>CN=Entrust Certification Authority - L1K,OU=(c) 2012 Entrust\, Inc. - for authorized use only,OU=See www.entrust.net/legal-terms,O=Entrust\, Inc.,C=US</ns1:X509IssuerName>
+                        <ns1:X509SerialNumber>1355992073</ns1:X509SerialNumber>
+                    </ns1:X509IssuerSerial>
+                    <ns1:X509Certificate>MIIFQjCCBCqgAwIBAgIEUNLMCTANBgkqhkiG9w0BAQsFADCBujELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xKDAmBgNVBAsTH1NlZSB3d3cuZW50cnVzdC5uZXQvbGVnYWwtdGVybXMxOTA3BgNVBAsTMChjKSAyMDEyIEVudHJ1c3QsIEluYy4gLSBmb3IgYXV0aG9yaXplZCB1c2Ugb25seTEuMCwGA1UEAxMlRW50cnVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEwxSzAeFw0xNDEyMTcyMTA0MjJaFw0xODAzMTgxMzA1MzJaMH8xCzAJBgNVBAYTAlVTMRIwEAYDVQQIEwlXaXNjb25zaW4xEjAQBgNVBAcTCU1pbHdhdWtlZTEfMB0GA1UEChMWSm9obnNvbiBDb250cm9scywgSW5jLjEnMCUGA1UEAxMec3Nvc2FtbC5nYS5qb2huc29uY29udHJvbHMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiYDD7seRu8OWJ1cb13hJDjSTdoTgLX+E65m/W44w7Rv9x0WGidev70/BtLvf12Qa+jGwGCdRSaBfYdKI+N1KneL3TkCmTkPiurEkdJToDQK/KdHd7CoV+dAjEN34yr2yjANZ+jx8Rv6WmbNBXtzFTC3sn4knIg7rFrQjNzOgpElMmRBl+GJZlAg40nAGA6qXcsDRyD7XHIHaBdHi0Kf+kd0WrpjZ+wnxnGGZidPWjE+UJ2oN3JiXjWLdpzOTZTz52Lf1cK97bC89KNo4jclXK5yF/HnIUBageCHRiipv6K2GVk0mekmwqmy1l/NMK8nFSn19H6KRjHksqOlGXQKfAQIDAQABo4IBiDCCAYQwCwYDVR0PBAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMDMGA1UdHwQsMCowKKAmoCSGImh0dHA6Ly9jcmwuZW50cnVzdC5uZXQvbGV2ZWwxay5jcmwwSwYDVR0gBEQwQjA2BgpghkgBhvpsCgEFMCgwJgYIKwYBBQUHAgEWGmh0dHA6Ly93d3cuZW50cnVzdC5uZXQvcnBhMAgGBmeBDAECAjBoBggrBgEFBQcBAQRcMFowIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0MDMGCCsGAQUFBzAChidodHRwOi8vYWlhLmVudHJ1c3QubmV0L2wxay1jaGFpbjI1Ni5jZXIwKQYDVR0RBCIwIIIec3Nvc2FtbC5nYS5qb2huc29uY29udHJvbHMuY29tMB8GA1UdIwQYMBaAFIKicHTdvFM/z3vU981/p2DGCky/MB0GA1UdDgQWBBS+jogp2/m4zHLwmxiQe6ODGLKM9DAJBgNVHRMEAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQAYfdUbFNXGai2kziwzfqFy2+cgpreArc7w9s0guIjj1oiMoV+N9HJjgUf+VYsVgivUWw72N2e+mYVOWLA0VzNc0RzLg75mLAvei7Kowtm3fpj68UI3dUL4PZdsNrADeaejy9AT6EiIsVnpd6lBUCLMgjv8IJsclJnjIV0nBkqtr2BMmUzhNLV6chVbMZtVvBqWrdLxpF5RYaIGug7P9bdDTwPjHCLxuKo/fc2B4zLX37kxoICQ9FXUfg8IXDuTBwp8qq7I/I8CQkU3BJ+EtOYPhwooM1OdN3f4WWS2QrgM0o5lyUsKKzzygOYfFlbEMNRI+mUfJS32NDo+orOvH9Qb</ns1:X509Certificate>
+                    <ns1:X509SubjectName>CN=ssosaml.ga.johnsoncontrols.com,O=Johnson Controls\, Inc.,L=Milwaukee,ST=Wisconsin,C=US</ns1:X509SubjectName>
+                </ns1:X509Data>
+            </ns1:KeyInfo>
+        </KeyDescriptor>
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://ssosaml.ga.johnsoncontrols.com/affwebservices/public/saml2sso"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://ssosaml.ga.johnsoncontrols.com/affwebservices/public/saml2sso"/>
+        <ns2:Attribute Name="sn" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns2="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <ns3:Attribute Name="department" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns3="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <ns4:Attribute Name="telephoneNumber" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns4="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <ns5:Attribute Name="co" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns5="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <ns6:Attribute Name="c" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns6="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <ns7:Attribute Name="givenName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns7="urn:oasis:names:tc:SAML:2.0:assertion"/>
+        <ns8:Attribute Name="mail" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified" xmlns:ns8="urn:oasis:names:tc:SAML:2.0:assertion"/>
+    </IDPSSODescriptor>
+</EntityDescriptor>

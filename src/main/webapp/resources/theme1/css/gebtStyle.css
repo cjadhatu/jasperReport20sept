@@ -1,0 +1,1471 @@
+/*-------------------------------------------------------------------------------------
+
+  (C) Copyright 2015 Johnson Controls, Inc. 
+      Use or Copying of all or any part of this program, except asNonlabor
+      permitted by License Agreement, is prohibited.
+
+-------------------------------------------------------------------------------------*/
+
+/* ----------------- New CSS -----------------*/
+.addPad {
+    padding-bottom: 35px;
+}
+.alignRight{
+    text-align:right;
+}
+.pd2Block .ui-state-default.slick-headerrow{
+    width:100% !important;
+}
+.buttonPad{
+    padding-left:30px !important;
+}
+.custSelect .form-control{
+    padding: 6px 2px !important;
+}
+.requiredFlag::after {
+    content:"*";
+    color:red;
+}
+.programDetailsBlock .hasDatepicker{
+    width: 156px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    padding-left: 10px;
+}
+.leftPanel {
+    width: 60%;
+    display: inline-block;
+     vertical-align: top;
+}
+.rightPanel {
+width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.roleSelect, .userSelect {
+    display:none;
+}
+.homeDisplay{
+    display:none;
+}
+.jci-tabs.jci-sub-menu {
+    margin: 0 0.6%;
+}
+
+.multi-select-button {
+    width: 160px;
+    background: #FFF;
+    padding: 1px;
+    text-align: left;
+    overflow: hidden;
+    white-space: pre;
+    text-overflow: ellipsis;
+}
+
+.btn + .dropdown-toggle.multi-select-arrow {
+    float: right;
+    background: #FFF;
+    border: 0px none;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+    height: 200px;
+    overflow: auto;
+}
+
+.ps-data{
+    display: block;
+    max-width: 110px;
+    overflow: hidden;
+    white-space: pre;
+    text-overflow: ellipsis;
+}
+
+.state-icon {
+    left: -5px;
+}
+
+.list-group-item-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 139, 202);
+}
+
+/* DEMO ONLY - REMOVES UNWANTED MARGIN */
+.well .list-group {
+    margin-bottom: 0px;
+}
+
+.modal-body {
+    padding-left: 30px;
+}
+
+.form-group {
+    margin-right: 20px;
+}
+
+.nopadd {
+    padding-left: 0px !important;
+}
+
+.valign {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.custombtn {
+    width: 100px;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.sl-grid {
+    background: white;
+    outline: 0;
+    border: 1px solid gray;
+    width: 100%;
+    height: 100px;
+}
+
+.sl-pager {
+    width: 100%;
+    height: 20px;
+}
+
+.grid-header {
+    border: 1px solid gray;
+    border-bottom: 0;
+    border-top: 0;
+    background: url('../images/header-bg.gif') repeat-x center top;
+    color: black;
+    height: 24px;
+    line-height: 24px;
+}
+
+.grid-header label {
+    display: inline-block;
+    font-weight: bold;
+    margin: auto auto auto 6px;
+}
+
+.grid-header .ui-icon {
+    margin: 4px 4px auto 6px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.grid-header .ui-icon.ui-state-hover {
+    background-color: white;
+}
+
+.grid-header #txtSearch {
+    margin: 0 4px 0 4px;
+    padding: 2px 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border: 1px solid silver;
+}
+
+.options-panel {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: 1px solid silver;
+    background: #f0f0f0;
+    padding: 4px;
+    margin-bottom: 20px;
+    width: 320px;
+    position: absolute;
+    top: 0px;
+    left: 650px;
+}
+
+/* Individual cell styles */
+.slick-cell.task-name {
+    font-weight: bold;
+    text-align: right;
+}
+
+.slick-cell.task-percent {
+    text-align: right;
+}
+
+.slick-cell.cell-move-handle {
+    font-weight: bold;
+    text-align: right;
+    border-right: solid gray;
+    background: #efefef;
+    cursor: move;
+}
+
+.cell-move-handle:hover {
+    background: #b6b9bd;
+}
+
+.slick-row.selected .cell-move-handle {
+    background: #D5DC8D;
+}
+
+.slick-row .cell-actions {
+    text-align: left;
+}
+
+.slick-row.complete {
+    background-color: #DFD;
+    color: #555;
+}
+
+.percent-complete-bar {
+    display: inline-block;
+    height: 6px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+/* Slick.Editors.Text, Slick.Editors.Date */
+input.editor-text {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    background: transparent;
+    outline: 0;
+    padding: 0;
+}
+
+#non-labor-cost-data .slick-row:first-child .slick-cell {
+    background: white;
+}
+
+.ui-datepicker-trigger {
+    margin-top: 2px;
+    padding: 0;
+    vertical-align: top;
+    position: absolute;
+    right: -5px;
+    top: 5px;
+}
+
+/* Slick.Editors.PercentComplete */
+input.editor-percentcomplete {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    background: transparent;
+    outline: 0;
+    padding: 0;
+    float: left;
+}
+
+.editor-percentcomplete-picker {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 100%;
+    background: url("../images/pencil.gif") no-repeat center center;
+    overflow: visible;
+    z-index: 1000;
+    float: right;
+}
+
+.editor-percentcomplete-helper {
+    border: 0 solid gray;
+    position: absolute;
+    top: -2px;
+    left: -9px;
+    background: url("../images/editor-helper-bg.gif") no-repeat top left;
+    padding-left: 9px;
+    width: 120px;
+    height: 140px;
+    display: none;
+    overflow: visible;
+}
+
+.editor-percentcomplete-wrapper {
+    background: beige;
+    padding: 20px 8px;
+    width: 100%;
+    height: 98px;
+    border: 1px solid gray;
+    border-left: 0;
+}
+
+.editor-percentcomplete-buttons {
+    float: right;
+}
+
+.editor-percentcomplete-buttons button {
+    width: 80px;
+}
+
+.editor-percentcomplete-slider {
+    float: left;
+}
+
+.editor-percentcomplete-picker:hover .editor-percentcomplete-helper {
+    display: block;
+}
+
+.editor-percentcomplete-helper:hover {
+    display: block;
+}
+
+/* Slick.Editors.YesNoSelect */
+select.editor-yesno {
+    width: 100%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* Slick.Editors.Checkbox */
+input.editor-checkbox {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+}
+
+/* Home Page */
+.homeIconDiv {
+    background-color: #ffffff;
+    width: 200px;
+    border: 1px solid #eee;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.homeIconDiv a.homeIconLink, .homeIconDiv a.homeIconReportLink, .homeIconDiv a.homeIconAdministrationLink, .homeIconDiv a.homeIconTrainingLink, .homeIconDiv a.homeIconSupportLink, .homeIconDiv a.homeIconRequestAccess {
+    background: url(../../gebtApp/images/Action.png) no-repeat 50px 80px;
+    display: block;
+    padding: 20px 0px 205px 45px;
+}
+
+.homeIconDiv a.homeIconReportLink {
+    background: url(../../gebtApp/images/Reporting.png) no-repeat 50px 80px;
+}
+
+.homeIconDiv a.homeIconAdministrationLink {
+    background: url(../../gebtApp/images/Administration.png) no-repeat 50px 80px;
+}
+
+.homeIconDiv a.homeIconTrainingLink {
+    background: url(../../gebtApp/images/Training.png) no-repeat 50px 80px;
+}
+
+/*Changes for new request access tab begins*/
+.homeIconDiv a.homeIconRequestAccess {
+    background: url(../../gebtApp/images/requestAccess.png) no-repeat 50px 80px;
+    width: 200px;
+    display: inline-block;
+    
+}
+/*Changes for new request access tab ends*/
+
+.homeIconDiv a.homeIconSupportLink {
+    background: url(../../gebtApp/images/Support.png) no-repeat 50px 80px;
+    width: 200px;
+    display: inline-block;
+    cursor: default;
+}
+
+.homeIconDiv a.homeIconAdministrationLink {
+	padding-left:35px;
+}
+.navbar-header a.pull-left {
+    padding-right: 10px;
+    border-right: 1px solid #eee;
+}
+
+.homeDiv {
+    margin: 20px auto;
+}
+
+.homeDiv .second-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.headeruserInfo {
+    margin: 10px 0px 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.headerUserRole {
+    color: #062F8F;
+}
+
+.headerUserRoleLabel {
+    font-weight: Normal;
+}
+
+.homeSupportDiv {
+    width: 450px;
+}
+
+.homeSupportInnerDiv {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    width: 240px;
+    margin-top: 40px;
+}
+
+.spanSupport {
+    width: 120px;
+    display: inline-block;
+    float: left;
+}
+
+.paraSupport {
+    float: left;
+}
+
+/* Mdm gate view*/
+.gate-data{
+	display:none;
+	margin:0 20px;
+}
+#gateGrid{
+	/* min-height:100px; 
+	height:300px;*/
+	background: white;
+    outline: 0;
+    border: 1px solid gray;
+}
+
+.mdmCategoryListView{
+	
+}
+
+[class^="slickgrid_"],
+[class^="slickgrid_"] div {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+     box-sizing: content-box !important;
+}
+/*#gateModalMasterAdd .modal-dialog {
+	width:800px;
+}*/
+.dropdownAlignment #CustomerDrDwn {
+margin-bottom: -0px !important;
+
+}
+ .dropdownAlignment #CustomerDrDwn2 {
+margin-bottom: -0px !important;
+
+}
+
+#gateModalMasterAdd .row.text-center {
+	margin-top:25px;
+}
+
+.gebt-tabs{
+	position:absolute;
+	bottom:6%;
+}
+.mar-left {
+	margin-left:6px;
+}
+.gebt-tabs .nav-tabs {
+border-bottom: 0px;
+    border-top: 1px solid #ddd;
+}
+.gebt-tabs  .nav-tabs > li {
+margin-bottom:0;
+    margin-top:-1px;
+}
+  
+.gebt-tabs  .nav-tabs > li > a {
+padding-top: 8px;
+padding-bottom: 8px;
+line-height: 20px;
+border: 1px solid transparent;
+border-bottom: 1px solid #ddd;
+-moz-border-radius:0px;
+-webkit-border-radius:0px;
+border-radius:0px;
+-moz-border-radius-bottomright: 5px;
+-webkit-border-bottom-right-radius: 5px;
+border-bottom-right-radius: 5px;
+-moz-border-radius-bottomleft: 5px;
+-webkit-border-bottom-left-radius: 5px;
+border-bottom-left-radius: 5px;
+background-color:#E0F7FF;
+margin-right:1px;
+}
+
+.gebt-tabs .nav-tabs > li.active > a, .gebt-tabs .nav-tabs > li:hover > a:hover {
+	color: #555555;
+	cursor: default;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-top-color: transparent;
+    cursor:pointer;
+}
+.jci-header {
+	border-bottom:1px solid transparent;
+    height: 50px;
+}
+.jci-logo{
+    width: 100px;
+}
+.mdm-tab-content .panel-body{
+	padding:10px 0px;
+}
+.mdm-tab-content .panel {
+	    -webkit-box-shadow: none;
+	    box-shadow:none;
+}
+.mdm-tab-content #masterList .row {
+	margin-right:-5px;
+}
+.mdm-tab-data-content {
+	border-top: 1px solid #CCCCCC;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin: 0 10px;
+}
+
+.cell-title {
+    font-weight: bold;
+}
+
+.cell-effort-driven {
+    text-align: center;
+}
+
+.cell-selection {
+    border-right-color: silver;
+    border-right-style: solid;
+    background: #f5f5f5;
+    color: gray;
+    text-align: right;
+    font-size: 10px;
+}
+.slick-row.selected .cell-selection {
+    background-color: transparent; /* show default selected row background */
+}
+
+.ui-widget-content a {
+    color: #2e72b9 !important;
+    text-decoration: underline;
+}
+.no-records{
+	text-align: center;
+    padding-top: 10px;
+}
+/*User Admin Screen DropDown*/
+div#uaPageTable_wrapper select.userRole,div#uaPageTable_wrapper select.buDropDown{
+	width:200px;
+}
+div#uaPageTable_wrapper .dataTables_scrollBody{
+	max-height:275px;
+    min-height:250px;
+}
+div#uaTabContent{
+	    border-top: none;
+}
+.tab-content .ua-tab-content .panel .panel-default{
+
+	 -webkit-box-shadow: none;
+	    box-shadow:none;
+}
+/*Icons of User Administration Screen*/
+.icons {
+	padding-left:5px;
+	cursor:pointer;
+	color:blue;	
+}
+
+.custom-margin{
+    margin-top: 15px;
+}
+/* Defects 2071*/ 
+#exampleModal .modal-dialog,#exampleModalMasterList .modal-dialog{
+	width:650px;
+}
+
+.auto-focus {
+    border-color: #ccc;
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted\9;
+    -webkit-box-shadow: 0 0 8px rgba(82,168,236,.6);
+    box-shadow: 0 0 8px rgba(82,168,236,.6);
+}
+
+.text-align-left {
+    text-align:left !important;
+}
+
+.ps-bu-dropdown {
+    margin-left: 5px;
+}
+
+.ps-status {
+    margin-left: 50px;
+}
+.ps-customer {
+    margin-left: 38px;
+}
+.ps-sopfy {
+    margin-left: 48px;
+}
+.ps-group{
+    margin-left: 60px;
+}
+.ps-epicid{
+    margin-left: 77px;
+}
+.ps-engmanager{
+    margin-left: 12px;
+}
+.form-inline .col-xs-6 {
+    margin: 0 0 10px !important;
+}
+
+fieldset {
+    border: 1px dotted #777;
+    margin: 5px;
+    padding: 5px;
+}
+
+legend{
+    padding: 2px;
+    width: 250px;
+    background: #fff;
+}
+
+
+.custom-readonly{
+    background-color : #eee;
+    cursor: not-allowed;
+}
+
+.slick-column-name {
+    font-weight: bold;
+}
+#searchText{
+	display:none;
+}
+
+.gebt-approval {
+    display: block;
+    margin-top: -5px;
+}
+.gebt-submit-approval{
+       height: 28px;
+    width: 30px;
+}
+
+.gebt-submit-approval-mdm{
+       height: 28px;
+    width: 30px;
+    margin-top: 8px;
+    margin-right: 15px;
+}
+
+/*pd2 tracker*/ 
+.pd2-header .ps-data{
+	max-width:250px;
+
+}
+
+#pd2-data{
+	min-height:100px;
+	max-height:300px;
+}
+.grid-canvas input {
+    height: 100%;
+}
+
+.error{
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.mdm-tab-data-content #uaPageTable_wrapper select.form-control, .cost-type-textbox{
+	    width: 100% ! important;
+}
+.save-to-sharePoint {
+    font-size: 15px;
+    margin: 37px 0 10px 0;
+}
+
+/* Select Part */
+#selectPart .jci-treelist {
+	height:350px;
+}
+.pd2-tracker-grid, .header-group-grid{
+    position: relative;
+    overflow: hidden;
+}
+.main-pd2-header {
+    position: relative;
+    display: block;
+    border: 1px solid #777;
+    height: 25px;
+    background: #CCC;
+    border-bottom: none;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.table-header{
+    width: 3671px;
+    overflow: hidden;
+    position: absolute;
+    left: 58px;
+}
+#Nonlabor .table-header, #labor .table-header{
+    width: 15000px;
+    overflow: hidden;
+    position: absolute;
+    left: 58px;
+}
+
+.pd2-group-header, .group-header {
+    height: 25px;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #777;
+    font-weight : bold;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.pd2-1{
+    width: 340px;
+}
+.pd2-2{
+    width: 190px;
+}
+.pd2-3{
+    width:1030px;
+    border-right: none;
+}
+
+.lfr-comment{
+    width: 600px!important;
+}
+
+.modal-content-sm{
+    width: 550px;
+    height: 175px;
+}
+
+#resourceTypeMasterlistPopupMBP.resourceType-textbox{
+    width: 412px;
+}
+
+#resourceCategoryMasterlistPopupMBP.resourceCategory-textbox{
+    width: 356px;
+}
+
+.main-header {
+	position: relative;
+	display: block;
+	border: 1px solid #777;
+	height: 25px;
+	background: #CCC;
+	border-bottom: none;
+	overflow: hidden;
+	/*margin-left: 15px;
+	margin-right: 15px;*/
+}
+
+/*resource Mapping*/
+#gateModalMasterAdd .modal-content.resourceMappingModal {
+    width:900px;
+    background-color:#FFF;
+}
+.modalAlign {
+    margin-top: 15%;
+    margin-left: -8%;
+}
+.availResType.checkbox{
+    margin:0 5px;
+}
+.assocResType.checkbox {
+    margin:0 5px;
+}
+
+/* Labour Forecast*/
+#labor-data.sl-grid{
+        min-height: 100px;
+       max-height: 200px;
+}
+#labor-data .slick-header-column.ui-state-default {
+    white-space: normal;
+    line-height: 12px;
+    word-wrap: break-word;
+    height: 27px;
+}
+
+#labor-data .slick-viewport-right .slick-cell, .range-select {
+    text-align: right;
+}
+#labor-data .slick-header-column.ui-state-default {
+    padding: 0 9px;
+}
+.copied-light-blue{
+    background-color: #00C8FF;
+}
+
+.copied-dark-blue{
+    background-color: #08338F;
+}
+
+.labor-data .group-header {
+    /*text-align: left;*/
+    padding-left: 5px;
+}
+
+/*.labor-data .table-header{
+    left: 0;
+}*/
+#programDetailsBlock .control-label, #adhocReports .control-label, #scheduleReports .control-label {
+    text-align: right;
+}
+
+#adhocReports .control-label-non-mandatory, #scheduleReports .control-label-non-mandatory {
+    text-align:right;
+    padding-top:7px;
+    margin-bottom:0;
+}
+
+.red{
+    background-color: red !important;
+}
+
+.white{
+    background-color: #FFF;
+}
+
+
+.cell-error{
+    color: red;
+    font-weight: 800;
+}
+
+
+.labor-text{
+    height: 25px;
+    padding: 3px 6px;
+}
+.edit-Non-labor-Cost-Column{
+    /*background-color:#00B0F0;*/
+    background-color:#68c1c5;
+}
+.non-Edit-Non-labor-Cost-Column{
+    background-color:#FFFFFF;
+}
+.over-Rides-Above-Calculated{
+    background-color:#FFC000 !important;
+}
+.over-Rides-Below-Calculated{
+    background-color:#D9E1F4 !important;
+}
+.user-Entry-Non-labor-Cost-Column {
+    background-color: #F8CBAD;
+}
+.spinner {
+  width: 100px;
+}
+.spinner input {
+  text-align: right;
+}
+.input-group-btn-vertical {
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+.input-group-btn-vertical > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+}
+.input-group-btn-vertical > .btn:first-child {
+  border-top-right-radius: 4px;
+}
+.input-group-btn-vertical > .btn:last-child {
+  margin-top: -2px;
+  border-bottom-right-radius: 4px;
+}
+.input-group-btn-vertical i{
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+#gateMasterlistPopupGateName .assembly-type-cost{
+    width : 412px;
+
+}
+#assemblyTypeMasterlistPopupMBP .assembly-type-cost{
+    width : 412px;
+
+}
+.end-gate-class{
+    display:none;
+
+}
+.non-Labor-Header{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #53b6da;
+    color: #ffffff;
+    margin: 2px 2px 10px 0px;
+    padding: 4px 2px 4px 5px;
+}
+
+#cpm .gebt-tabs, #Nonlabor .gebt-tabs {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.setTimingModal {
+
+    /* To center vertically */
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-left: -39%;
+     width : 1150px;
+ 
+}
+
+
+#history-data .slick-header-columns{
+    height: 35px;
+}
+
+#history-data .slick-header-column.ui-state-default{
+    height: 35px;
+    white-space: normal;
+}
+
+#assemblyTypeMasterlistPopupMBP {
+    width: 356px;
+}
+
+#contentDetails .gebt-tabs {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.cost-type-label{
+    padding: 10px 0;
+}
+
+.reports .multi-select-button{
+    width: 130px;
+}
+
+.custom-readonly .multi-select-button, .custom-readonly .btn + .dropdown-toggle.multi-select-arrow{
+    background: #eee;
+    cursor: not-allowed;
+}
+
+.app-permission{
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    text-decoration: underline;
+    color: #3382d6;
+}
+
+.app-permission-header{
+    border-bottom:none;
+    padding-bottom: 0px;
+}
+
+.edit-message{
+    display: inline-block;
+    text-decoration: underline;
+    color: #3382d6;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+
+/*Schedule Report*/
+.recepientDefaultMsg,.app-default-msg {
+     margin-bottom: 20px;
+    height: 200px;
+}
+.app-default-msg {
+    color:#000;
+    font-size:14px;
+}
+
+.date-left{
+    float: left;
+    padding-left: 5px;
+}
+
+.time-padding {
+    padding-top: 45px;
+}
+.bootstrap-timepicker-widget.dropdown-menu.timepicker-orient-left{
+    z-index:999999 ! important;
+    min-width: 160px;
+    height: 120px; 
+}
+input.assembly-value, input.part-data {
+    text-align: right;
+    height : 25px;
+    padding-bottom: 5px;
+    padding-right:5px;
+}
+
+input.assembly-value.assembly-name{
+    text-align: left;
+}
+
+.assembly-value::-ms-clear,.part-data::-ms-clear {  display: none; width : 0; height: 0; }
+.assembly-value::-ms-reveal,.part-data::-ms-reveal{  display: none; width : 0; height: 0; }
+
+.filter-id {
+    width:200px !important;
+}
+
+.label-align {
+    padding-top:7px;
+}
+.linkdisabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: grey;
+}
+
+.scroolen{
+    overflow : auto;
+}
+
+select#pdBUdropdown[disabled], select#pdPldropdown[disabled], select#pdTcdropdown[disabled], select#currDropdown[disabled],
+select#progDropdown[disabled], select#pd2Dropdown[disabled], select#fyDropdown[disabled], select#fyToDropdown[disabled], select#sopfyFromDropdown[disabled], select#pd2Dropdown[disabled] {
+    cursor:default !important;
+}
+
+.filter-modal-window .modal-dialog {
+    width: 1096px;
+}
+
+
+.scroolen{
+    overflow : auto;
+}
+
+select#pdBUdropdown[disabled], select#pdPldropdown[disabled], select#pdTcdropdown[disabled], select#currDropdown[disabled],
+select#progDropdown[disabled], select#pd2Dropdown[disabled], select#fyDropdown[disabled], select#fyToDropdown[disabled], select#sopfyFromDropdown[disabled], select#pd2Dropdown[disabled] {
+    cursor:default !important;
+}
+
+.filter-modal-window .modal-dialog {
+    width: 1096px;
+}
+
+#uaPageTable_wrapper .dataTables_scroll{
+    width:2296px;
+} 
+#uaPageTable_wrapper .dataTables_scroll table{
+    width:2279px;
+}
+.form-inline .form-control.multi-select {
+    width: 200px !important;
+    height:35px;
+}
+.centerFeild{
+    width: 230px;
+    
+}
+.form-control.filter-manager {
+     display: inline-block;
+    width: 40%;
+    padding-top: 0px;
+}
+
+
+
+/*#CustomerDrDwn {
+    margin-bottom: -51px !important;
+}*/
+/*#cusLable {
+    margin-right: -61px !important;
+}*/
+
+.ui-widget-content a.viewComments.greyComments {
+    color :#b3b3b3 !important;
+}
+
+/*Hide Propagate Changes Button*/
+.propagate {
+    display:none;
+}
+#propagateChanges   {
+    padding-right: 15px;
+    padding-top: 6px;
+}
+
+/*hide additional columns */
+
+.form-inline .form-group.equReduceDiv{
+    margin-bottom:10px;
+}
+.completePercent {
+    display: none;
+}
+#equReductionModal .modal-dialog {
+    width:700px;
+    margin-top:-15%;
+}
+
+#equReductionModal .equReduceDiv input[type=text].form-control {
+    width:250%;
+}
+
+/* LaborRate Popup*/
+.laborRate-label {
+width:84px;
+}
+.laborRate-currency {
+margin-left:30px;
+}
+.laborRate {
+    width: 30px;
+    height: 26px;
+    /*margin-left: 20px;*/
+}
+
+/*for login page*/
+.header-style {
+    font-size: 36px;
+    color: red;
+}
+
+    .login_user{
+    text-align: center;   
+    border: 2px solid blue;    
+    width: 265px;
+    height: 166px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.login_user label
+{
+    margin-right:15px;
+
+}
+.login_submit {
+ margin-top: 10px;
+    /* text-align: center; */
+    width: 77px;
+    margin-left: 10px;
+    background-color: blue;
+    color: white;
+}
+.login_user input [type="text"] {
+width:160px;
+}
+/*Style for Resource Mapping Buttons*/
+#saveAndClose {
+    margin-right: 3px;
+}
+#btnMLpopUpCancel {
+    margin-left: 3px;
+}
+
+.viewComments {
+ margin-right:5px;
+}
+
+/*Incresing size of select approver modal*/
+.approver-modal{
+    padding-left:10px;
+}
+.approver-add .container-fluid {
+    padding-left:0px;
+    padding-right:0px;
+}
+.approver-add-btn {
+    margin-left:15px;
+}
+.modal-body.timing-Rule-Popup{
+    padding:5px 0px;
+}
+.time-Rule-Popup-Grid {
+     padding-left:0px;
+     padding-right:0px;
+}
+/*style for wbs deliverable checkbox*/
+#WorkBreakdownStructure .deliverable-checkbox {
+    height: 17px;
+    width: 17px;
+    display: inline-block;
+    float: left;
+    margin-left:20px;
+    margin-top:5px;
+}
+span.reqField{
+    margin-left: 5px;
+    color: red;
+}
+
+/*style for WBS fixed Table-Header*/
+.fixed-wbs-header > thead > tr > td {
+    border-bottom-width: 2px;
+    min-width: 100px;
+}
+/*.fixed-wbs-header > thead > tr  {
+   width:1482px !important;
+}*/
+.table-content > tbody > tr > td {
+        border: 1px solid #ddd;
+    min-width: 100px;
+
+}
+#newEquCss {
+    height: 32px;
+}
+
+.generateLabel label {
+width:100px;
+}
+/*Phase Timimg screen*/
+.reset-master-icon a{
+margin-left:10px;
+}
+.delete-mar{
+    margin-right: 10px;
+}
+.table-alignment {
+table-layout:fixed;
+}
+.partialEffort {
+width:6%;
+}
+/*Merging adhoc and schedule reports*/
+#addRecepientsdiv .form-inline
+{
+    margin:10px 0px !important;
+}
+
+.controlmargin-left
+{
+    margin-left:64px;
+}
+
+#addRecepientsdiv .email {
+    width:93% !important;
+}
+
+/**schedreports.htmml**/
+
+.reportTypes
+{
+
+}
+
+.reportTypes label
+{
+    float:left;
+    margin:0px 0px 6px 0px;
+    width:86px;
+}
+
+.report-type-txt {
+    text-align: right;
+    margin-left: 63px !important;
+    
+}
+
+.txt-right
+{
+    text-align:right;
+}
+.mdmrepoprtPopup .modal-content{
+width: 825px;
+    text-align: center;
+    top: 170px;
+    right: 60px;
+}
+/*MDM checkBox all*/
+.checkboxAll {
+    margin-top:-1px !important;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+    .multiselect-container.dropdown-menu {
+        max-width:200px;
+    }
+
+}
+
+/*for maintaining consistency in select approver model*/
+.dropDown :nth-child(1) {
+    background-color: transparent;
+        border-color: transparent;
+        width: 216px;
+}
+#CDPopUpAssDiv .table {
+margin-bottom:15px;
+    max-height: 312px;
+    overflow: auto;
+   
+}
+
+.bgtGridTabs{
+    border: 1px solid #cccccc;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    margin: 0px 14px 3px 15px;
+    box-shadow: 2px 1px 7px #cccccc;
+}
+.bgtGridTabFont{
+   font-weight:700;
+}
+.bgtGridTabMargin{
+   margin-top: 25px;
+}
+.bgtTabIcon{
+    padding-right: 6px;
+}
+.approverDel {
+        margin-left: 373px;
+}
+/* Program Type */
+#DRProgramTypeDiv,#uploadProgramTypeDiv,#exportProgramTypeDiv {
+    display:none;
+}
+.proceed {
+    margin-top:-10px;
+    width: 100%;
+}
+.form-inline .control-label.dateMargin{
+    margin-right:35px;
+}
+.phasePrgBtn {
+background-color:#8be1df;
+}
+
+
+#trainingPopup ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    margin-top:13px;
+}
+
+/* Float the list items side by side */
+#trainingPopup ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+#trainingPopup ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.hide{display: none;}
+
+/* Change background color of links on hover */
+#trainingPopup ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+#trainingPopup ul.tab li a:focus,#trainingPopup ul.tab li a.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.trainingVideos a {
+display:block;
+line-height: 3;
+    display: block;
+}
+.trainingVideos {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    padding: 22px;
+}
+i.fa.fa-play{
+    vertical-align:middle;
+ font-size: 7px;
+ margin-right: 7px;
+color: black;
+}
+.NLCDateIcon{
+    width: 140px;
+}
+.prog-info-search {
+    margin-top: 7px;
+    margin-left: -9px;
+}
+#psprgtypedropdown {
+    margin-left: 7px;
+}
+.phase-timing:after {
+    content: "*";
+    margin-left: 5px;
+    color: red;
+}
+#contentDetailModel.modalAlign {
+    margin-top: 24%;
+    margin-left: -74%;
+}
+.legend-table tr th{
+width: 33%;
+    border: 1px solid black;
+    height: 35px;
+    text-align: center;
+}
+#legendId {
+    border: none;
+    width: 76px;
+}

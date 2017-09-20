@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DetailSummaryReport" pageWidth="3600" pageHeight="72000" columnWidth="3600" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="19547"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\HeroKu\\Ireport\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="detailsqlqueryString" class="java.lang.String"/>
+	<parameter name="subquerysqlString" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 1 from webforecastdev.rep1_summary]]>
+	</queryString>
+	<field name="?column?" class="java.lang.Integer"/>
+	 <field name = "subReportBeanList" class = "java.util.List"/>
+	 <field name = "colNames" class = "java.lang.String[]"/>
+	 <field name = "summarySubReportBeanList" class = "java.util.List"/>
+	 <field name = "summarycolNames" class = "java.lang.String[]"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="20202" splitType="Stretch">
+		
+			<subreport>
+				<reportElement x="0" y="25" width="2014" height="47"/>
+				<!--
+				<subreportParameter name="subquerysql">
+				<subreportParameterExpression><![CDATA[$P{subquerysqlString}]]></subreportParameterExpression>
+                </subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["summery_subreport1.jasper"]]></subreportExpression>
+				-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{summarySubReportBeanList})</dataSourceExpression>   
+            <subreportExpression><![CDATA["summery_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+			
+			
+			
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="1294" height="25" backcolor="#66CCFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Summary Report]]></text>
+			</staticText>
+			<subreport>
+			
+				<reportElement x="0" y="82" width="2014" height="20000"/>
+				<!--
+					<subreportParameter name="detailsqlquery">
+				<subreportParameterExpression><![CDATA[$P{detailsqlqueryString}]]></subreportParameterExpression>
+                </subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["DetailsReport_subreport1.jasper"]]></subreportExpression>
+				-->
+				
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.ListOfArrayDataSource($F{subReportBeanList}, $F{colNames})</dataSourceExpression>
+            
+            <subreportExpression><![CDATA["DetailsReport_subreport1.jasper"]]></subreportExpression>
+            
+			</subreport>
+			<rectangle>
+				<reportElement x="0" y="72" width="2760" height="10"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</summary>
+</jasperReport>

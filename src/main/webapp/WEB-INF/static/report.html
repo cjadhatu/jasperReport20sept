@@ -1,0 +1,133 @@
+
+    <section>
+        <div class="container-fluid">
+             <div class="panel">
+                 <div class="panel-head clearfix">
+                     <div class="panel-title">Report</div>
+                     
+                     <div ng-if="onLoadData.role==='HQ/Admin Forecaster'" class="quick-link-hold pull-right">
+                     	<a href="javascript:void(0)" ng-click="toggleQuickLinks()" ><u>Quick Report Links</u></a>
+                     	<div class="quick-links" ng-show='showQuickLinks'>
+                     		<div><a href="javascript:void(0)" ng-click="submissionHistory()" ><u>Submission History Report</u></a></div>
+                     		<div><a href="javascript:void(0)" ng-click="feildHistroy()" ><u>Field History Report</u></a></div>
+                     		<div><a href="javascript:void(0)" ng-click="regionalReport()" ><u>HQ Regional Report</u></a></div>
+                     	</div>
+                     </div>
+                     <!--<div class="tools">
+                         <i class="fa fa-file-excel-o" aria-hidden="true" data-toggle="tooltip" title="Export to Excel"></i>
+                         <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="tooltip" title="Export to PDF"></i>
+                     </div>-->
+                 </div>
+                 <div class="panel-body">
+                     <!--<div class="hide-filter">nHide Filter</div>-->
+                      <!--Navigation Menu Ends -->
+                        <div id="mySidenav"  class="sidenav">
+                    
+                       <label><b>Username</b>: {{onLoadData.userName}} </label>   
+                       <label>Role: {{onLoadData.role}}</label>
+                         <label>Global Id : {{onLoadData.globalId}}</label>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                         <a   ng-repeat = "list in validLocation" ng-href="#/{{list.link}}">{{list.name}}</a>          
+                        </div>
+                        <div id="main">                    
+                        <span style="    font-size: 21px;cursor: pointer;color: #0497cb;" onclick="openNav()">&#9776; Navigate</span>
+                        
+                        <!--Navigation Menu Ends -->
+                     <div class="filters report-filters clearfix">
+                         <div class="col-md-12 filter-section">
+                               <div class="col-md-2" ng-if="onLoadData.role==='HQ/Admin Forecaster'">
+                                 <label>Source Type</label>
+                                 <br />
+                                <dropdown-multiselect selected="sourceTypeName" model="selectedSourceType" options="sourceTypeList" pre-selected-text="sourceTypeName" is-trigger="true" fill-data="getRegion(data)" ng-class="{'custom-readonly': !isSTEnable }" class="ps-techcenter"></dropdown-multiselect>
+                               <!-- <select class="form-control" ng-model="selectedSourceType" ng-options="x for x in sourceTypeList" ng-change="getRegion()">
+                                      <option value="">Please Select </option>
+                                 </select>-->
+                             </div>
+                             <div class="col-md-2">
+                                 <label>Region</label>
+                                 <br />
+                                 <dropdown-multiselect selected="regionName" model="selectedRegion" options="regionList" pre-selected-text="preSelected" is-trigger="true" fill-data="setSubRegion(data)" ng-class="{'custom-readonly': !isREnable }"  class="ps-techcenter"></dropdown-multiselect>
+                              <!-- <select class="form-control" ng-model="selectedRegion" ng-options="x for x in regionList" ng-change="setSubRegion()">
+                                      <option value="">Please Select </option>
+                                 </select>-->
+                             </div>
+                             
+                             <div class="col-md-2">
+                                 <label>Country</label>
+                                 <br />
+                                  <dropdown-multiselect selected="countryName" model="selectedCountry" options="countryList" pre-selected-text="preSelected" is-trigger="true" fill-data="setBranchListByCountry(data)" ng-class="{'custom-readonly': !isCTEnable }"  class="ps-techcenter"></dropdown-multiselect>
+                                <!-- <select class="form-control" ng-model="selectedCountry" ng-options="v for v in countryList" ng-change="setBranchList()">
+                                      <option value="">Please Select </option>
+                                 </select>-->
+                             </div>
+                             <div class="col-md-2" class="subRegion" ng-show="isChina">
+                                 <label>Sub Region</label>
+                                 <br />
+                                  <dropdown-multiselect selected="subRegionName" model="selectedSubRegion" options="subRegionList" pre-selected-text="preSelected" is-trigger="true" fill-data="setBranchListBySubRegion(data)" ng-class="{'custom-readonly': !isSREnable }" class="ps-techcenter"></dropdown-multiselect>
+                                <!-- <select class="form-control" ng-model="selectedSubRegion" ng-options="v for v in subRegionList" ng-change="setcountryList()">
+                                      <option value="">Please Select </option>
+                                 </select>-->
+                             </div>
+                             <div class="col-md-2">
+                                 <label>Branch</label>
+                                 <br />
+                                  <dropdown-multiselect selected="branchName" model="selectedBranch" options="branchList" pre-selected-text="preSelected" is-trigger="true" fill-data="setGridData(data)"  class="ps-techcenter"></dropdown-multiselect>
+                                <!-- <select class="form-control" ng-model="selectedBranch" ng-options="v for v in branchList" ng-change="setGridData()">
+                                      <option value="">Please Select </option>
+                                 </select> -->
+                             </div>
+                              <div class="col-md-2 report-lob-ddl">
+                                 <label>Lob</label>
+                                 <br />
+                                  <dropdown-multiselect selected="lobName" model="selectedLob" options="lobList" pre-selected-text="preSelected" is-trigger="true" fill-data="setLob(data)"  class="ps-techcenter"></dropdown-multiselect>
+                                <!-- <select class="form-control" ng-model="selectedBranch" ng-options="v for v in branchList" ng-change="setGridData()">
+                                      <option value="">Please Select </option>
+                                 </select> -->
+                             </div>
+                         </div>
+
+                     </div>
+
+                     <div class="clearfix button-section1">
+                         <!--<label><input type="checkbox" />All</label>
+                         <label><input type="radio" ng-model="result" name="radio"  ng-value="'sum'" id="sumRadio" />Summary</label>
+                         <label><input type="radio" ng-model="result" name="radio" ng-value="'detail'"  checked id="detailRadio" />Detail</label>-->
+                         <!-- input type="button" value="Show Summary Report" class="btn btn-primary"  ng-click="setDyanaminGrid('summ')"id="show-report-1" /> -->
+                         <input type="button" value="Show Report" class="btn btn-primary"  ng-click="setDyanaminGrid('detail')"id="show-report" />
+                         <input type="button" value="Export Summary" class="btn btn-primary" ng-click="salesForecastReport()"id="Generate-Detail-Report" />
+                          <input type="button" value="Export Detail" class="btn btn-primary"  ng-click="forecastDetailReport()"id="Generate-Detail-Report" />      
+                     </div>
+
+                   <div  ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ui-grid-exporter ui-grid-auto-resize class="grid" ng-style="getTableHeight('report1')" hidden></div>
+
+                     <div>
+                         <div  ui-grid="gridOptions2" ui-grid-selection ui-grid-exporter ui-grid-auto-resize class="grid2" ng-style="getTableHeight('report2')" hidden></div>
+
+                     <div>
+
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </section>
+    <script>
+       document.getElementById("wrapperDiv").style.marginLeft= "0";
+    function openNav() {
+        debugger
+       if(document.getElementById("mySidenav").offsetWidth !== 250 ){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("wrapperDiv").style.marginLeft = "250px";
+       }
+       else{
+            document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("wrapperDiv").style.marginLeft= "0";
+       }
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("wrapperDiv").style.marginLeft= "0";
+     x.classList.toggle("change");
+}
+  </script>

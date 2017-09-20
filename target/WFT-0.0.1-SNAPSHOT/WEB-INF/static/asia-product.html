@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BE Sales Forecasting</title>
+
+
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/responsive.bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <img src="img/logo.png" />
+                            <span>BE Sales Forecasting</span>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="pull-right">Forecast Period: <span>3/1/2017 to 5/3/2017</span></div>
+                            <ul class="pull-right">
+                                <li><a href="#">Region</a></li>
+                                <li><a href="#">Admin</a></li>
+                               
+                                <li><a href="#">Reports</a></li>
+                                <li><a href="login.html">logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="container-fluid">
+                <div class="panel">
+                    <div class="panel-head clearfix">
+                        <div class="panel-title">Branch Geography - <span>China</span></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="button" value="Forecast" class="btn btn-primary" data-toggle="modal" data-target="#forecast-panel" data-backdrop="static" />
+                                <input type="button" value="Go to LOB's" class="btn btn-primary" data-toggle="modal" data-target="#lob-panel" data-backdrop="static" />
+                            </div>
+                        </div>
+                        <div class="row mt-12">
+                            <div class="col-md-12 ">
+
+                                <table id="branchTbl" class="table table-striped table-bordered dt-responsive nowrap" cellpadding="0" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"><input type="checkbox" name="select_all" value="1" id="example-select-all"></th>
+                                            <th>Branch Geography #</th>
+                                            <th>Branch Geography Description</th>
+                                            <th>Go to forecast</th>
+                                            <th>Go to LOB's</th>
+                                            <th>Forecast Status</th>
+                                            <th>Branches</th>
+                                            <th>Opportunities</th>
+                                            <th>UnFactored Amt <span style="font-size:10px;">(USD)</span></th>
+                                            <th>Total Factored Amt <span style="font-size:10px;">(USD)</span></th>
+                                            <th>Updated Date</th>
+                                            <th>Updated By</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>CHN - Nanjing</td>
+                                            <td>CHN - Nanjing</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#forecast-panel" data-backdrop="static">Forecast</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#lob-panel" data-backdrop="static">Go to LOB's</a></td>
+                                            <td>In Process</td>
+                                            <td class="text-right">7</td>
+                                            <td class="text-right">103</td>
+                                            <td class="text-right">4,777,798</td>
+                                            <td class="text-right">75,600</td>
+                                            <td>3/8/2017</td>
+                                            <td>System</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>CHN - Shenyang</td>
+                                            <td>CHN - Shenyang</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#forecast-panel" data-backdrop="static">Forecast</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#lob-panel" data-backdrop="static">Go to LOB's</a></td>
+                                            <td>In Process</td>
+                                            <td class="text-right">4</td>
+                                            <td class="text-right">9</td>
+                                            <td class="text-right">100,000</td>
+                                            <td class="text-right">4,230,000</td>
+                                            <td>3/8/2017</td>
+                                            <td>System</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>CHN - Xi'an</td>
+                                            <td>CHN - Xi'an</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#forecast-panel" data-backdrop="static">Forecast</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#lob-panel" data-backdrop="static">Go to LOB's</a></td>
+                                            <td>In Process</td>
+                                            <td class="text-right">14</td>
+                                            <td class="text-right">100</td>
+                                            <td class="text-right">12,000</td>
+                                            <td class="text-right">5,400</td>
+                                            <td>3/6/2017</td>
+                                            <td>System</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>CHN - Hangzhou</td>
+                                            <td>CHN - Hangzhou</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#forecast-panel" data-backdrop="static">Forecast</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#lob-panel" data-backdrop="static">Go to LOB's</a></td>
+                                            <td>In Process</td>
+                                            <td class="text-right">3</td>
+                                            <td class="text-right">89</td>
+                                            <td class="text-right">176,400</td>
+                                            <td class="text-right">176,400</td>
+                                            <td>1/8/2016</td>
+                                            <td>System</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>CHN - Beijing</td>
+                                            <td>CHN - Beijing</td>
+                                            <td><a href="#" data-toggle="modal" data-target="#forecast-panel" data-backdrop="static">Forecast</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#lob-panel" data-backdrop="static">Go to LOB's</a></td>
+                                            <td>In Process</td>
+                                            <td class="text-right">5</td>
+                                            <td class="text-right">90</td>
+                                            <td class="text-right">124,676</td>
+                                            <td class="text-right">860,000</td>
+                                            <td>3/8/2017</td>
+                                            <td>System</td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+
+                                <div class="table-footer text-center clearfix">
+                                    <div class="col-md-2">
+                                        Total Opportunities
+                                        <br />
+                                        <label>391</label>
+                                        <!-- <label id = "label1">${salesForcasts.oppsTotal}</label>  -->
+                                    </div>
+                                    <div class="col-md-2">
+                                        Total UnFactored Amt <span style="font-size:10px;">(USD)</span>
+                                        <br />
+                                        <label>5,190,874</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        Total Factored Amt <span style="font-size:10px;">(USD)</span>
+                                        <br />
+                                        <label>5,347,400</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        Branches Not Started
+                                        <br />
+                                        <label>8</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        Branches In Progress
+                                        <br />
+                                        <label>25</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        Branches Submitted
+                                        <br />
+                                        <label>15</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast Modal -->
+            <div id="forecast-panel" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Forecast</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel" id="">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="button" value="Add New" class="btn btn-primary" data-toggle="modal" data-target="#AddNew" data-backdrop="static" />
+                                            <input type="button" value="Filter" class="btn btn-primary" data-toggle="modal" data-target="#Filter" data-backdrop="static" />
+                                            <input type="button" value="Submit Forecast" class="btn btn-primary" data-toggle="modal" data-target="#SubmitForecast" data-backdrop="static" />
+                                        </div>
+                                    </div>
+                                    <div class="row mt-12">
+                                        <div class="col-md-12">
+
+                                            <table id="forecastTbl" class="table table-striped table-bordered dt-responsive nowrap" cellpadding="0" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Edit</th>
+                                                        <th>Account Name</th>
+                                                        <th>Opportunity Name</th>
+                                                        <th>Plan Date</th>
+                                                        <th>Estimated Amt <span style="font-size:10px;">(USD)</span></th>
+                                                        <th>UnFactored Amt <span style="font-size:10px;">(USD)</span></th>
+                                                        <th>Factored Amt <span style="font-size:10px;">(USD)</span></th>
+                                                        <th>Margin Pct</th>
+                                                        <th>Stage</th>
+                                                        <th>Lead Sales Rep</th>
+                                                        <th>Opportunity No.</th>
+                                                        <th>LOB</th>
+                                                        <th>Country</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center"><i class="fa fa-exclamation-circle"></i></td>
+                                                        <td class="text-center"><i class="fa fa-edit"></i></td>
+                                                        <td>test account2</td>
+                                                        <td>Test opp 8</td>
+                                                        <td>3/13/2017</td>
+                                                        <td class="text-right">854,700</td>
+                                                        <td class="text-right">854,700</td>
+                                                        <td class="text-right">854,700</td>
+                                                        <td class="text-right">10</td>
+                                                        <td>Qualify</td>
+                                                        <td>XING LI</td>
+                                                        <td>OPP-0628929</td>
+                                                        <td>HVAC</td>
+                                                        <td>China</td>
+                                                    </tr>
+                                                    <tr class="disabled-row">
+                                                        <td class="text-center"><i class="fa fa-exclamation-circle"></i></td>
+                                                        <td class="text-center"><i class="fa fa-edit"></i></td>
+                                                        <td>test account3</td>
+                                                        <td>Test opp 9</td>
+                                                        <td>2/28/2017</td>
+                                                        <td class="text-right">341,880</td>
+                                                        <td class="text-right">341,880</td>
+                                                        <td class="text-right">341,880</td>
+                                                        <td class="text-right">10</td>
+                                                        <td>Qualify</td>
+                                                        <td>Fanlong Meng</td>
+                                                        <td>OPP-0625104</td>
+                                                        <td>HVAC</td>
+                                                        <td>China</td>
+                                                    </tr>
+                                                    <tr class="disabled-row">
+                                                        <td class="text-center"><i class="fa fa-exclamation-circle"></i></td>
+                                                        <td class="text-center"><i class="fa fa-edit"></i></td>
+                                                        <td>test account4</td>
+                                                        <td>Test opp 10</td>
+                                                        <td>2/24/2017</td>
+                                                        <td class="text-right">769,230</td>
+                                                        <td class="text-right">769,230</td>
+                                                        <td class="text-right">769,230</td>
+                                                        <td class="text-right">5</td>
+                                                        <td>Target</td>
+                                                        <td>Long Yu</td>
+                                                        <td>OPP-0625136</td>
+                                                        <td>Service</td>
+                                                        <td>China</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><i class="fa fa-exclamation-circle"></i></td>
+                                                        <td class="text-center"><i class="fa fa-edit"></i></td>
+                                                        <td>test account5</td>
+                                                        <td>Test opp 11</td>
+                                                        <td>4/30/2017</td>
+                                                        <td class="text-right">2,529,914</td>
+                                                        <td class="text-right">2,529,914</td>
+                                                        <td class="text-right">2,529,914</td>
+                                                        <td class="text-right">100</td>
+                                                        <td>Closed Won</td>
+                                                        <td>Xu Yin</td>
+                                                        <td>OPP-0444637</td>
+                                                        <td>Service</td>
+                                                        <td>China</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><i class="fa fa-exclamation-circle"></i></td>
+                                                        <td class="text-center"><i class="fa fa-edit"></i></td>
+                                                        <td>test account6</td>
+                                                        <td>Test opp 12</td>
+                                                        <td>3/31/2017</td>
+                                                        <td class="text-right">42,735</td>
+                                                        <td class="text-right">42,735</td>
+                                                        <td class="text-right">42,735</td>
+                                                        <td class="text-right">50</td>
+                                                        <td>Present</td>
+                                                        <td>Zhe Hong</td>
+                                                        <td>OPP-0628913</td>
+                                                        <td>Service</td>
+                                                        <td>China</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center"><i class="fa fa-exclamation-circle"></i></td>
+                                                        <td class="text-center"><i class="fa fa-edit"></i></td>
+                                                        <td>泰科（北京）工程有限公司</td>
+                                                        <td>世界之花</td>
+                                                        <td>3/13/2017</td>
+                                                        <td class="text-right">140,000</td>
+                                                        <td class="text-right"></td>
+                                                        <td class="text-right">20,296</td>
+                                                        <td class="text-right">100</td>
+                                                        <td>Negotiation Strong</td>
+                                                        <td>Damon Wang</td>
+                                                        <td>OPT01268278</td>
+                                                        <td>Security</td>
+                                                        <td>China</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                            <div class="table-footer text-center clearfix">
+
+                                                <div class="col-md-6">
+                                                    Opportunities
+                                                    <br>
+                                                    <label for="male" id="label2">2,099</label>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    Factored Amt <span style="font-size:10px;">(USD)</span>
+                                                    <br>
+                                                    <label for="male" class="numbers" id="label3">27,001,579</label>
+                                                    <p></p>
+                                                </div>
+                                                <!-- <div class="col-md-2">
+                                            Unfactored GP <span style="font-size:10px;">(USD)</span>
+                                            <p>27,001,579</p>
+                                        </div>-->
+                                                <!-- <div class="col-md-4">
+                                             Factored Amt <span style="font-size:10px;">(USD)</span>
+                                             <br>
+                                             <label class="numbers" id= "forecast-fct-amt"></label>
+
+                                         </div>-->
+                                                <!-- <div class="col-md-2">
+                                            Unfactored GP <span style="font-size:10px;">(USD)</span>
+                                            <p>845,000 </p>
+                                        </div>-->
+                                                <!-- <div class="col-md-2">
+                                            <input type="button" value="More Totals" class="btn btn-primary" />
+                                        </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- LOB Modal -->
+            <div id="lob-panel" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Branch LOB</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel" id="">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="button" value="Refresh Data" class="btn btn-primary" />
+                                            <input type="button" value="Forecast" id="lob-forecast" class="btn btn-primary" />
+                                            <input type="button" value="Re-Submit" class="btn btn-primary" />
+                                        </div>
+                                    </div>
+                                    <div class="row mt-12">
+                                        <div class="col-md-12">
+
+                                            <table id="lobTbl" class="table table-striped table-bordered dt-responsive nowrap" cellpadding="0" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox"></th>
+                                                        <th>Branch #</th>
+                                                        <th>Branch</th>
+                                                        <th>Branch Geography #</th>
+                                                        <th>Branch Geography</th>
+                                                        <th>Forecast Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td>411</td>
+                                                        <td><a href="#">Baltimore EQ</a></td>
+                                                        <td>0N27</td>
+                                                        <td>Baltimore,MD</td>
+                                                        <td>Not Started</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+        </section>
+
+
+    </div>
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src= "js/bootstrap.js" ></script>
+    <script src= "js/jquery.dataTables.js" ></script>
+    <script src= "js/dataTables.bootstrap.js" ></script>
+    <script src= "js/dataTables.responsive.js" ></script>
+    <script src= "js/responsive.bootstrap.js" ></script>
+
+    <script src= "js/highcharts.js" ></script>
+    <script src= "js/data.js" ></script>
+    <script src= "js/drilldown.js" ></script>
+    <script src= "js/exporting.js" ></script>  
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table = $('#branchTbl').DataTable({
+
+                responsive: true,
+                'columnDefs': [{
+                    'targets': 0,
+                    'searchable': false,
+                    'orderable': false,
+                    "scrollY": "194px",
+                    "scrollCollapse": true,
+                    "paging": true,
+                    'render': function (data, type, full, meta) {
+                        return '<input type="checkbox" name="id[]" value="' + $('<div/>').text(data).html() + '">';
+                    }
+                }]
+            });
+
+            $('#branchTbl thead th:first').removeClass('sorting_asc');
+
+
+            // Handle click on "Select all" control
+            $('#example-select-all').on('click', function () {
+                // Get all rows with search applied
+                var rows = table.rows({ 'search': 'applied' }).nodes();
+                // Check/uncheck checkboxes for all rows in the table
+                $('input[type="checkbox"]', rows).prop('checked', this.checked);
+            });
+
+            // Handle click on checkbox to set state of "Select all" control
+            $('#example tbody').on('change', 'input[type="checkbox"]', function () {
+                // If checkbox is not checked
+                if (!this.checked) {
+                    var el = $('#example-select-all').get(0);
+                    // If "Select all" control is checked and has 'indeterminate' property
+                    if (el && el.checked && ('indeterminate' in el)) {
+                        // Set visual state of "Select all" control 
+                        // as 'indeterminate'
+                        el.indeterminate = true;
+                    }
+                }
+            });
+
+
+            $('#forecast-panel').on('shown.bs.modal', function (e) {
+
+                //Call your Function here 
+                if ($.fn.DataTable.isDataTable("#forecastTbl")) {
+                    $('#forecastTbl').DataTable().destroy();
+                }
+
+
+                $('#forecastTbl').dataTable({
+                    "scrollY": "194px",
+                    "scrollCollapse": true,
+                    "paging": true,
+                });
+
+                $(window).bind('resize', function () {
+                    $('#forecastTbl').dataTable().fnAdjustColumnSizing();
+                });
+
+            });
+
+            $('#lob-panel').on('shown.bs.modal', function (e) {
+
+                //Call your Function here 
+                if ($.fn.DataTable.isDataTable("#lobTbl")) {
+                    $('#lobTbl').DataTable().destroy();
+                }
+
+
+                $('#lobTbl').dataTable({
+                    "scrollY": "194px",
+                    "scrollCollapse": true,
+                    "paging": true,
+                });
+
+                $(window).bind('resize', function () {
+                    $('#lobTbl').dataTable().fnAdjustColumnSizing();
+                });
+
+            });
+
+            $('#lob-forecast').click(function () {
+                $('#lob-panel').modal('hide');
+                $('#forecast-panel').modal({ backdrop: 'static', keyboard: false })
+            })
+        })
+    </script>
+</body>
+</html>

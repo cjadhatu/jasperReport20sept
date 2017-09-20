@@ -1,0 +1,209 @@
+<!--<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>BE Sales Forecasting</title>
+    
+    
+    
+      <!--   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="css/responsive.bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    
+    
+    
+        [if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif] -->
+
+<body class="dashboard-wrapper">
+    <header style="padding-top:0;">
+        <div class="container-fluid head-nav">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <!--<img src="img/logo.png" />
+                            <span>BE Sales Forecasting</span>-->
+                    </div>
+                    <div class="col-md-8">
+                        <div class="pull-right user-info">
+                            <i class="fa fa-user fa-3"></i>
+                            <div class="user-info-detail" style="display:none;">
+                                <div class="heading">User Information</div>
+                                <i class="fa fa-user"></i>
+                                <p class="user-name">User</p>
+                                <div class="user-detail">
+                                    <p>User Role : <span>{{role}}</span></p>
+                                    <p>User Name : <span>{{userName}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="pull-right">Forecast Period: <span>3/1/2017 to 5/3/2017</span></div> -->
+                        <ul class="pull-right">
+                            <li ng-if="loginData.globalId == 'cningse' || loginData.globalId == 'jbintey'"><a href="#/report">Reports</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container-fluid" style="margin-top:44px;">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12 widget">
+                    <a ng-if="isAdmin" ng-href="#/region/all">
+                        <div class="panel-widget" style="background: rgb(1, 184, 224);">
+                            <div class="clearfix">
+                                <i class="fa fa-globe"></i>
+                                <div class="widget-right">
+                                    <div class="large text-center">{{superRegion}}</div>
+                                    <div class="clearfix text-center widget-info">
+                                        <div class="col-md-3">
+                                            Last Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{lastMonthForecast}}>{{lastMonthForecast}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Current Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{currentForecast}}>{{currentForecast}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Rolling 90 days total <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{rollingTotal}}>{{rollingTotal}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Planned Sales Amt. <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{plannedSalesAmt}}>{{plannedSalesAmt}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a ng-if="isAdminNot" class="notclickale">
+                        <div class="panel-widget" style="background: rgb(1, 184, 224);">
+                            <div class="clearfix">
+                                <i class="fa fa-globe"></i>
+                                <div class="widget-right">
+                                    <div class="large text-center">{{superRegion}}</div>
+                                    <div class="clearfix text-center widget-info">
+                                        <div class="col-md-3">
+                                            Last Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{lastMonthForecast}}>{{lastMonthForecast}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Current Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{currentForecast}}>{{currentForecast}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Rolling 90 days total <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{rollingTotal}}>{{rollingTotal}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Planned Sales Amt. <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{plannedSalesAmt}}>{{plannedSalesAmt}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 widget" ng-repeat="list in listData track by $index">
+                    <a ng-href="#/{{redirectTo}}/{{list.name}}" ng-if="list.isClickable== true" ng-class="{ 'notclickale' : list.isClickable== false}">
+                        <div class="panel-widget" ng-style="{'background-color':'{{colors[$index]}}'}">
+                            <div class="clearfix">
+                                <i class="fa fa-globe"></i>
+                                <div class="widget-right">
+                                    <div class="large text-center">{{list.name}}</div>
+                                    <div class="clearfix text-center widget-info">
+                                        <div class="col-md-3">
+                                            Last Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.lastMonth}}>{{list.lastMonth}}
+                                        </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Current Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.currentMonth}}>{{list.currentMonth}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Rolling 90 days total <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.rollingDays}}>{{list.rollingDays}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Planned Sales Amt. <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.plannedSale}}>{{list.plannedSale}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a ng-if="list.isClickable== false" ng-class="{ 'notclickale' : list.isClickable== false}">
+                        <div class="panel-widget" ng-style="{'background-color':'{{colors[$index]}}'}">
+                            <div class="clearfix">
+                                <i class="fa fa-globe"></i>
+                                <div class="widget-right">
+                                    <div class="large text-center">{{list.name}}</div>
+                                    <div class="clearfix text-center widget-info">
+                                        <div class="col-md-3">
+                                            Last Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.lastMonth}}>{{list.lastMonth}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Current Month Forecast <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.currentMonth}}>{{list.currentMonth}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Rolling 90 days total <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.rollingDays}}>{{list.rollingDays}}</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Planned Sales Amt. <span style="font-size:10px;">USD</span>
+                                            <br>
+                                            <label class="landing-f-value" title={{list.plannedSale}}>{{list.plannedSale}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    </section>
+    <script>
+        $(document).ready(function() {
+            document.getElementById("wrapperDiv").style.marginLeft = "0";
+            var colors = ["#01b8e0", "#23a4d2", "#0475b7", "#0655a4", '#29b682', '#55b841'];
+
+            if ($(window).width() > 991) {
+                $('.user-info .fa-3').mouseenter(function() {
+                    $('.user-info-detail').fadeIn();
+                })
+                $('.user-info .fa-3').mouseleave(function() {
+                    $('.user-info-detail').fadeOut();
+                })
+            } else {
+                $('.user-info .fa-3').click(function() {
+                    $('.user-info-detail').slideToggle();
+                })
+            }
+        })
+    </script>

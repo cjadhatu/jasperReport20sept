@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HQ and Regional Reports" pageWidth="2000" pageHeight="50000" columnWidth="2000" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\HeroKu\\Ireport\\HQ and Regional Reports\\"]]></defaultValueExpression>
+	</parameter>
+	<field name = "hqRegionForecastSummaryList" class = "java.util.List"/>
+	<field name = "hqRegionReportNminus1List" class = "java.util.List"/>
+	<field name = "hqRegionReportCMList" class = "java.util.List"/>
+	<field name = "hqRegionReportNpluse1List" class = "java.util.List"/>
+	<field name = "hqRegionReportNpluse2List" class = "java.util.List"/>
+	<field name = "hqRegionReportTop50" class = "java.util.List"/>
+	<field name = "hqRegionReportLobWiseList" class = "java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="1837" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="148" width="593" height="100"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionReportNminus1List})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional Reports_N-1_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="131" width="603" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="0" width="593" height="100"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionForecastSummaryList})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional Reports_Summary_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="275" width="603" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="299" width="593" height="100"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionReportCMList})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional Reports_N_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="425" width="603" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="438" width="593" height="100"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionReportNpluse1List})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional Reports_N+1_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="563" width="603" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="580" width="593" height="100"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionReportNpluse2List})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional Reports_N+2_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="709" width="603" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="891" width="593" height="100"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionReportLobWiseList})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional ReportsLOBWise.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="867" width="603" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="710" width="593" height="139"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hqRegionReportTop50})</dataSourceExpression>
+				<subreportExpression><![CDATA["HQ and Regional ReportsTop50Opprtunies.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

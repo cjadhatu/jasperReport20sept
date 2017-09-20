@@ -1,0 +1,302 @@
+  
+  <section>
+        <div class="container-fluid">
+             <div class="panel">
+                 <div class="panel-head clearfix">
+                     <div class="panel-title">Add New</div>
+                             </div>
+                                <div class="panel-body">
+                                     <!--Navigation Menu Ends -->
+                                                        <div id="mySidenav"  class="sidenav">
+                                                    
+                                                    <label><b>Username</b>: {{onLoadData.userName}} </label>   
+                                                    <label>Role: {{onLoadData.role}}</label>
+                                                        <label>Global Id : {{onLoadData.globalId}}</label>
+                                                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                                        <a   ng-href="#/">Login</a>       
+                                                         <a    ng-href="#/newlanding">Home</a>             
+                                                        </div>
+                                                        <div id="main">                    
+                                                        <span style="font-size: 21px;cursor: pointer;color: #0497cb;" onclick="openNav()">&#9776; Navigate</span>
+                                                    
+                                                    <!--Navigation Menu Ends -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="panel">
+                                                    <!--<div class="panel-heading clearfix">
+                                                <div class="panel-title">
+                                                    Opportunity
+                                                </div>
+                                            </div>-->
+                                                    <div class="panel-body new-forcast-panel">
+                                                        
+                                                         <div class="form-group clearfix" ng-show="false">
+                                                            <div class="col-md-4">
+                                                                Source Type:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                
+                                                                 <select class="form-control" ng-model="selectedSourceType" ng-change="getRegion()" ng-options="x.name for x in sourceTypeList track by x.name">
+                                                                 <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Region:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                
+                                                                 <select class="form-control" ng-model="selectedRegion" ng-change="setSubRegion()" ng-options="x.name for x in regionList track by x.name">
+                                                                 <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Country:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                 <select class="form-control" ng-model="selectedCountry"  ng-change="setBranchList()" ng-options="x.name for x in countryList track by x.name">
+                                                                <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 branch-col add-asteric">
+                                                                Sub Region:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" ng-model="selectedSubRegion" ng-change="setBranchList()" ng-options="x.name for x in subRegionList track by x.name">
+                                                                <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Branch:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" ng-model="selectedBranch" ng-options="x.name for x in branchList track by x.name">
+                                                                <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                         <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                LOB:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <select class="form-control" ng-model="selectedLob" ng-options="x.name for x in lobList track by x.name">
+                                                                <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                          <div class="form-group clearfix">
+                                                              
+                                                            <div class="col-md-4">
+                                                                Account Name:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                  <input type="text"  ng-model="accName"  class="form-control" />
+                                                               
+                                                            </div>
+                                                        </div>
+                                                          
+                                                       
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Forecast Closed Date (MM-DD-YYYY):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <date-picker  ng-model="dateOne" uid="forecast" selected="ptCtrl.datepickerDefaultValue" ></date-picker>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Stage:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                
+                                                                 <select class="form-control"  ng-model="selectedStage" ng-options="x.name for x in stageList track by x.name">
+                                                                <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="panel">
+                                                    <!--<div class="panel-heading clearfix">
+                                                <div class="panel-title">
+                                                    Opportunity
+                                                </div>
+                                            </div>-->
+                                                    <div class="panel-body new-forcast-panel">
+                                                        <div class="form-group clearfix">
+                                                            <form name="myForm" novalidate>
+                                                            <div class="col-md-4 add-asteric">
+                                                                Probability (%):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <!--<input  ng-model="probability" type="text" ng-change="setFactLocal()" class="form-control" />-->
+                                                            <input type="number" min="0" max="100" pattern="-?\d*" name="pets" id="txtPets" class="text-box form-control" ng-model="probability" ng-change="setFactLocal()" required custom-focus />
+                                                            <div class="error-wrapper" ng-show="myForm.pets.$dirty && myForm.pets.$invalid">
+                                                            <span ng-show="myForm.pets.$error.required && myForm.pets.$dirty">Please enter 0 or more</span>
+                                                            <span ng-show="myForm.pets.$error.number && myForm.pets.$dirty">Must be numeric</span>
+                                                            <span ng-show="myForm.pets.$error.min && myForm.pets.$dirty">You can't have negative pets!</span>
+                                                            <span ng-show="myForm.pets.$error.pattern && myForm.pets.$dirty">Must be an integer</span>
+                                                        </div>
+                                                            </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                             <form name="myForm1" novalidate>
+                                                            <div class="col-md-4 add-asteric">
+                                                                Gross Margin (%):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                               
+                                                                <input type="number" min="0" max="100" pattern="-?\d*" name="pets" id="txtPets" class="text-box form-control" ng-model="grossMargin" required custom-focus />
+                                                            <div class="error-wrapper" ng-show="myForm1.pets.$dirty && myForm1.pets.$invalid">
+                                                            <span ng-show="myForm1.pets.$error.required && myForm1.pets.$dirty">Please enter 0 or more</span>
+                                                            <span ng-show="myForm1.pets.$error.number && myForm1.pets.$dirty">Must be numeric</span>
+                                                            <span ng-show="myForm1.pets.$error.min && myForm1.pets.$dirty">You can't have negative values!</span>
+                                                            <span ng-show="myForm1.pets.$error.pattern && myForm1.pets.$dirty">Must be an integer</span>
+                                                            </div>
+                                                            </div>
+                                                             </form>
+                                                        </div>
+                                                          <div class="form-group clearfix">
+                                                               <form name="myForm2" novalidate>
+                                                            <div class="col-md-4">
+                                                                Opportunity Number:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                
+                                                                 <input type="text"   name="pets" id="txtPets" class="form-control" ng-model="opportunityNumber" ng-disabled="true"  custom-focus disabled />
+                                                            
+                                                          
+                                                            </div>
+                                                               </form>
+                                                        </div>
+                                                         <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Opportunity Name:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input ng-model = "oppName" type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                      <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Currency:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                
+                                                                 <select class="form-control" ng-change="getExchangeRate(selectedCurr)" ng-model="selectedCurr" ng-options="x.name for x in currencyList track by x.name">
+                                                                <option style="display:none" value="">--- Please Select ---</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                      
+                                                        <div class="form-group clearfix" >
+                                                            <div class="col-md-4">
+                                                                Factored Amt. (Oppty Cur.):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="text"  ng-disabled="true" ng-model="factAmtLocal" ng-change="setFact(factAmtLocal)"  class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group clearfix" >
+                                                            <form name="myForm2" novalidate>
+                                                            <div class="col-md-4 add-asteric">
+                                                                Unfactored Amt. (Oppty Cur.):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <!--<input ng-change="setUnfact(unFactAmtLocal)"  ng-disabled="exchange==null" ng-model="unFactAmtLocal" type="text" class="form-control" />-->
+                                                             <input  ng-change="setUnfact(unFactAmtLocal)" min="0" ng-disabled="exchange==null" ng-model="unFactAmtLocal" type="number"   ng-pattern="/-?[0-9]+/" name="pets" id="txtPets" class="text-box form-control" required custom-focus />
+                                                            <div class="error-wrapper" ng-show="myForm2.pets.$dirty && myForm2.pets.$invalid">
+                                                            <span ng-show="myForm2.pets.$error.required || myForm2.pets.$dirty">Please enter 0 or more, can't have negative values!</span>
+                                                            <span ng-show="myForm2.pets.$error.number && myForm2.pets.$dirty">Must be numeric</span>
+                                                           
+                                                            
+                                                            
+                                                            </div>
+                                                            </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                            <div class="col-md-4 add-asteric">
+                                                                Sales Lead:
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input ng-model="saleLead" type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                       
+                                                         <div class="form-group clearfix" >
+                                                            <div class="col-md-4">
+                                                                Factored Amt. Converted (USD):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                               
+                                                                <input ng-model="factAmtUsd"  ng-disabled="true" type="text" class="form-control right-text" />
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class="form-group clearfix" >
+                                                            <div class="col-md-4">
+                                                                Unfactored Amt. Converted (USD):
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                
+                                                                <input type="text" ng-disabled="true" ng-model= "unFactAmtUsd" class="form-control right-text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                         <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" ng-click="goBack()" data-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-success" ng-click="save()" ng-disabled='checkSaveDisable()' data-dismiss="modal">Save & Close</button>
+                        </div>
+                        
+                         </div>
+                
+             </div>
+        </div>
+    </section>
+      <script>
+       document.getElementById("wrapperDiv").style.marginLeft= "0";
+    function openNav() {
+        debugger
+       if(document.getElementById("mySidenav").offsetWidth !== 250 ){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("wrapperDiv").style.marginLeft = "250px";
+       }
+       else{
+            document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("wrapperDiv").style.marginLeft= "0";
+       }
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("wrapperDiv").style.marginLeft= "0";
+     x.classList.toggle("change");
+}
+  </script>

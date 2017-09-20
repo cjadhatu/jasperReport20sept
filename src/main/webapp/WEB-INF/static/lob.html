@@ -1,0 +1,120 @@
+<section>
+    <div class="container-fluid">
+        <div class="panel design-fix">
+            <div class="panel-head clearfix">
+            	<div class="col-sm-2" style="padding-left: 0px;">
+            		<span class='btn-navigate' onclick="openNav()">&#9776;</span>
+                	<span class="panel-title col-sm-10">LOB</span>
+            	</div>
+            	<div class="col-sm-10" style="padding-right: 0px;">
+            		<div class="filters clearfix design-fix">
+						<div class="col-md-8 filter-section design-fix">
+                    		<!--<input type="button" value="Add New" class="btn btn-primary "  ng-click="addNew()"id="show-report" />-->
+						</div>
+                    	<div class="clearfix button-section design-fix" style="text-align: right;">
+                        	<input placeholder="Search" ng-change="refreshData()" ng-model="searchText" />
+                    		<button ng-click="ShowLeaveInfo()" class="btn btn-primary" title="Click Here To View LOB Mapping" data-toggle="tooltip" data-placement="left">
+								<span class="p-l-15">LOB Definition</span>
+							</button>
+						</div>
+					</div>
+            	</div>
+                <!--<div class="tools">
+                         <i class="fa fa-file-excel-o" aria-hidden="true" data-toggle="tooltip" title="Export to Excel"></i>
+                         <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="tooltip" title="Export to PDF"></i>
+                     </div>-->
+            </div>
+            <div class="panel-body design-fix">
+                <!--<div class="hide-filter">Hide Filter</div>-->
+                <!--Navigation Menu Ends -->
+                <div id="mySidenav" class="sidenav">
+
+                    <label><b>Username</b>: {{onLoadData.userName}} </label>
+                    <label>Role: {{onLoadData.role}}</label>
+                    <label>Global Id : {{onLoadData.globalId}}</label>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a ng-repeat="list in validLocation" ng-href="#/{{list.link}}">{{list.name}}</a>
+                </div>
+                <div id="main" class="design-fix">
+                	<div ui-grid="gridOptions" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-exporter ui-grid-auto-resize class="gridLB" ng-style="getTableHeight()"></div>
+                </div>
+
+                <div>
+                        <div class="table-footer design-fix text-center clearfix">
+                            <div class="float-div2">
+                                <div class='footer-label' title='Total LOB'>Total LOB</div>
+                                <div class="footer-val" title={{fetchJson.totalLobs}}>{{fetchJson.totalLobs}}</div>
+                            </div>
+                            <div class="float-div2">
+                                <div class='footer-label' title='Total Opportunities'>Total Opportunities</div>
+                                <div class="footer-val" title={{fetchJson.totalOpportunities}}>{{fetchJson.totalOpportunities}}</div>
+                            </div>
+                            <div class="float-div2">
+                                <div class='footer-label' title='Total Unfactored Amt.'>Total Unfactored Amt.<span style="font-size:10px;">(USD)</span></div>
+                                <div class="footer-val" title={{fetchJson.totalUnfactAmt}}>{{fetchJson.totalUnfactAmt}}</div>
+                            </div>
+                            <div class="float-div2">
+                                <div class='footer-label' title='Total Factored Amt.(USD)'>Total Factored Amt.<span style="font-size:10px;">(USD)</span></div>
+                                <div class="footer-val" title={{fetchJson.totalfactAmt}}>{{fetchJson.totalfactAmt}}</div>
+                            </div>
+                            <div class="float-div2">
+                                <div class='footer-label' title='Rolling 90 days Unfact Amt.(USD)'>Rolling 90 days Unfact Amt.<span style="font-size:10px;">(USD)</span></div>
+                                <div class='footer-val' title={{fetchJson.totalRollingDaysUnfactAmt}}>{{fetchJson.totalRollingDaysUnfactAmt}}</div>
+                            </div>
+                            <div class="float-div2">
+                                <div class='footer-label' title='Rolling 90 days Fact Amt.(USD)'>Rolling 90 days Fact Amt.<span style="font-size:10px;">(USD)</span></div>
+                                <div class='footer-val' title={{fetchJson.totalRollingDaysFactAmt}}>{{fetchJson.totalRollingDaysFactAmt}}</div>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="LeaveDetials" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog" style="width:690px;min-height:">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div style="margin-top:10px;">
+                        <div class="row">
+
+                            <div class="col-md-12 text-center">
+                                <div>
+                                    <h3 class="bg-primary"><span>LOB Details</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div ui-grid="gridOptions2" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-exporter ui-grid-auto-resize class="gridLB" ng-style="getTableHeight()"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.getElementById("wrapperDiv").style.marginLeft = "0";
+
+    function openNav() {
+        debugger
+        if (document.getElementById("mySidenav").offsetWidth !== 250) {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("wrapperDiv").style.marginLeft = "250px";
+        } else {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("wrapperDiv").style.marginLeft = "0";
+        }
+
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("wrapperDiv").style.marginLeft = "0";
+        x.classList.toggle("change");
+    }
+</script>

@@ -1,0 +1,107 @@
+<section>
+    <div class="container-fluid">
+        <div class="panel design-fix">
+            <div class="panel-head clearfix">
+            	<div class="col-sm-2" style="padding-left: 0px;">
+            		<span class='btn-navigate' onclick="openNav()">&#9776;</span>
+                	<span class="panel-title col-sm-10">Region</span>
+            	</div>
+            	<div class="col-sm-10" style="padding-right: 0px;">
+            		<div class="filters clearfix design-fix">
+						<div class="col-md-8 filter-section design-fix">
+                    		<input type="button" value="Forecast" ng-disabled="deleteArr.length==0" class="btn btn-primary" ng-click="gotoForecast()" id="show-report" />
+                        	<input type="button" value="Go to Country/Sub region" ng-disabled="deleteArr.length==0" class="btn btn-primary" ng-click="gotoCountries()" id="show-report" />
+                        	<input type="button" value="Go to LOB&#39;s" ng-disabled="deleteArr.length==0" class="btn btn-primary" ng-click="redirectToLobButton()" id="show-report" />
+                        	<input type="button" value="Submit to Forecast" class="btn btn-success" ng-disabled="!isSubmitClickable" ng-click="submitToForecast()" id="show-report" />
+						</div>
+                    	<div class="clearfix button-section design-fix" style="text-align: right;">
+                        	<input placeholder="Search" ng-change="refreshData()" ng-model="searchText" />
+						</div>
+					</div>
+            	</div>
+            	
+                <!--<div class="tools">
+                         <i class="fa fa-file-excel-o" aria-hidden="true" data-toggle="tooltip" title="Export to Excel"></i>
+                         <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="tooltip" title="Export to PDF"></i>
+                     </div>-->
+            </div>
+            <div class="panel-body design-fix">
+                <!--<div class="hide-filter">Hide Filter</div>-->
+                <!--Navigation Menu Ends -->
+                <div id="mySidenav" class="sidenav">
+
+                    <label><b>Username</b>: {{onLoadData.userName}} </label>
+                    <label>Role: {{onLoadData.role}}</label>
+                    <label>Global Id : {{onLoadData.globalId}}</label>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a ng-repeat="list in validLocation" ng-href="#/{{list.link}}/{{list.data}}">{{list.name}}</a>
+                </div>
+                <div id="main" class="design-fix">
+                    <!--Navigation Menu Ends -->
+                    <div ui-grid="gridOptions" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-exporter ui-grid-auto-resize class="gridRE" ng-style="getTableHeight()"></div>
+
+                </div>
+                <div>
+                    <div class="table-footer design-fix text-center clearfix">
+
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.opportunitesLable}}>{{footerObj.opportunitesLable}}</div>
+                            <div class="footer-val" title={{footerObj.opportunitesVal}}>{{footerObj.opportunitesVal}}</div>
+                        </div>
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.totalunfactordLable}}>{{footerObj.totalunfactordLable}}<span style="font-size:10px;">(USD)</span></div>
+                            <div class="footer-val" title={{footerObj.totalunfactoredVal}}>{{footerObj.totalunfactoredVal}}</div>
+                        </div>
+
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.totalfactordLable}}>{{footerObj.totalfactordLable}}<span style="font-size:10px;">(USD)</span></div>
+                            <div class="footer-val" title={{footerObj.totalfactoredVal}}>{{footerObj.totalfactoredVal}}</div>
+                        </div>
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.notstartedLable}}>{{footerObj.notstartedLable}}</div>
+                            <div class="footer-val" title={{footerObj.notstartedVal}}>{{footerObj.notstartedVal}}</div>
+                        </div>
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.inprogressLable}}>{{footerObj.inprogressLable}}</div>
+                            <div class='footer-val' title={{footerObj.inprogressVal}}>{{footerObj.inprogressVal}}</div>
+                        </div>
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.submittedLable}}>{{footerObj.submittedLable}}</div>
+                            <div class='footer-val' title={{footerObj.submittedVal}}>{{footerObj.submittedVal}}</div>
+                        </div>
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.rollingDaysUnfactAmtLabel}}>{{footerObj.rollingDaysUnfactAmtLabel}}<span style="font-size:10px;">(USD)</span></div>
+                            <div class='footer-val' title={{footerObj.rollingDaysUnfactAmtVal}}>{{footerObj.rollingDaysUnfactAmtVal}}</div>
+                        </div>
+
+                        <div class="float-div">
+                            <div class='footer-label' title={{footerObj.rollingDaysFactAmtLabel}}>{{footerObj.rollingDaysFactAmtLabel}}<span style="font-size:10px;">(USD)</span></div>
+                            <div class='footer-val' title={{footerObj.rollingDaysFactAmtVal}}>{{footerObj.rollingDaysFactAmtVal}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.getElementById("wrapperDiv").style.marginLeft = "0";
+
+    function openNav() {
+
+        if (document.getElementById("mySidenav").offsetWidth !== 250) {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("wrapperDiv").style.marginLeft = "250px";
+        } else {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("wrapperDiv").style.marginLeft = "0";
+        }
+
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("wrapperDiv").style.marginLeft = "0";
+        x.classList.toggle("change");
+    }
+</script>

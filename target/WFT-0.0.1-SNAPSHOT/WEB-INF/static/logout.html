@@ -1,0 +1,22 @@
+
+
+        <div class="card card-container">
+            <h1 class="login-title">Loging out please wait</h1>
+            <p id="profile-name" class="profile-name-card"></p>
+        </div><!-- /card-container -->
+
+
+
+ <script>
+    
+      $(document).ready(function(){ 
+     document.getElementById("wrapperDiv").style.marginLeft= "0";
+   
+  
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+
+});
+      </script>

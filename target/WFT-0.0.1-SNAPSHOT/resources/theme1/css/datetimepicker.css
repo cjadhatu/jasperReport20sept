@@ -1,0 +1,48 @@
+.datetimepicker-wrapper {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.datetimepicker-wrapper > input {
+  margin-bottom: 0 !important;
+  width: 130px;
+}
+
+.datetimepicker-wrapper [ng-model=hours], 
+.datetimepicker-wrapper [ng-model=minutes] {
+  width: 46px !important;
+}
+
+.forecast-dtp-holder {
+	position:absolute;
+	z-index: 2;
+}
+.forecast-dtp-holder div.ui-datepicker{
+	font-size:12px;
+}
+
+.ui-grid-cell-contents.field-focussed {
+	border: 1px #0497cb solid;
+}
+
+.forecast-dtp-holder .ui-datepicker-next, .forecast-dtp-holder .ui-datepicker-prev {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	text-decoration: none;
+}
+.forecast-dtp-holder .ui-datepicker-next:before {
+	font-family: FontAwesome;
+   	content: "\f054";
+   	color: #222;
+}
+.forecast-dtp-holder .ui-datepicker-prev:before {
+	font-family: FontAwesome;
+   	content: "\f053";
+   	color: #222;
+}
+.dtp-plan-date { 
+	user-select: none; 
+	-ms-user-select: none; 
+	-moz-user-select: none; 
+}

@@ -1,0 +1,9 @@
+<div class='btn-group form-control multi-select' data-ng-click='open=!open;openDropdown($event)' title="{{selected}}">
+    <button class='btn btn-small multi-select-button '>{{selected}}</button>
+    <button class='btn btn-small dropdown-toggle multi-select-arrow'><span class='caret'></span></button>
+    <ul class='dropdown-menu list-group checked-list-box' aria-labelledby='dropdownMenu'>
+        <li class="list-group-item" data-ng-click="isAllSelected ? deselectAll($event) : selectAll($event)"><span class="state-icon select-all glyphicon" ng-class="options.length==model.length?'glyphicon-check':'glyphicon-unchecked'"></span><strong>Select All</strong><input type="checkbox" class="hidden"></li>
+        <li class='divider'></li>
+        <li data-ng-repeat='option in options' class="list-group-item" data-ng-click='setSelectedItem($event)' title="{{option.name}}"><span class=" state-icon glyphicon" data-ng-class="checkItem(option)"></span>{{option.name}}<input type="checkbox" class="hidden"></li>
+    </ul>
+</div>

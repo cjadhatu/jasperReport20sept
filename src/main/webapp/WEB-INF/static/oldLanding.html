@@ -1,0 +1,128 @@
+
+  <!--<div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+   <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="grid"></div>-->
+</div>
+<style type="text/css">
+.small-box {
+    border-radius: 2px;
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.bg-aqua{
+    background-color: #0497cb !important;	
+    color: #fff !important;
+}
+
+.small-box>.inner {
+    padding: 10px;
+}
+
+.small-box h3, .small-box p {
+    z-index: 5;
+}
+
+.small-box h3 {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    white-space: nowrap;
+    padding: 0;
+}
+.small-box h3, .small-box p {
+    z-index: 5;
+}
+
+.small-box p {
+    font-size: 15px;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.small-box .icon {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    z-index: 0;
+    font-size: 70px;
+    color: rgba(0,0,0,0.15);
+}
+
+</style>
+<section>
+     <!--Navigation Menu Ends --> 
+                                                        <div id="mySidenav"  class="sidenav">
+                                                    
+                                                    <label><b>Username</b>: {{onLoadData.userName}} </label>   
+                                                    <label>Role: {{onLoadData.role}}</label>
+                                                        <label>Global Id : {{onLoadData.globalId}}</label>
+                                                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                                        <a   ng-href="#/">Login</a>       
+                                                         <a    ng-href="#/newlanding">Home</a>             
+                                                        </div>
+                                                        <div id="main">                    
+                                                        <span style="    font-size: 21px;cursor: pointer;color: #0497cb;" onclick="openNav()">&#9776; Navigate</span>
+                                                    
+                                                    <!--Navigation Menu Ends -->
+        		
+        <div class="container-fluid" style="margin-top:44px;">
+         
+        		
+        
+                <div class="col-md-8 col-md-offset-2">
+                	<div class="row">
+                        
+	                    <div class="col-md-6">
+	                        <a href="#" class="section">
+	                            <img src="resources/images/user-management.jpg" />
+	                            <div class="section-title"><span>User Management</span></div>
+	                        </a>
+	                    </div>
+	                    <div class="col-md-6">
+	                        <a  class="section">
+	                            <img src="resources/images/master-data.jpg" />
+	                            <div class="section-title"><span>Master Data Management</span></div>
+	                        </a>
+	                    </div>
+	                     <div class="col-md-6">
+	                        <a href="#/report" class="section">
+	                            <img src="resources/images/reports.jpg" />
+	                            <div class="section-title"><span>Reports</span></div>
+	                        </a>
+	                    </div>
+	                    <div class="col-md-6"ng-click="redirectReport()" >
+	                    
+	                        <a href="#/forecast/all" class="section" >
+	                            <img src="resources/images/regions.jpg" />
+	                            <div class="section-title"><span>Forecast</span></div>
+	                        </a>
+	                    </div>
+                   </div> 
+                </div>
+        </div>
+    </section>
+      <script>
+       document.getElementById("wrapperDiv").style.marginLeft= "0";
+    function openNav() {
+        debugger
+       if(document.getElementById("mySidenav").offsetWidth !== 250 ){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("wrapperDiv").style.marginLeft = "250px";
+       }
+       else{
+            document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("wrapperDiv").style.marginLeft= "0";
+       }
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("wrapperDiv").style.marginLeft= "0";
+     x.classList.toggle("change");
+}
+  </script>

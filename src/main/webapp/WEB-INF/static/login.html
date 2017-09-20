@@ -1,0 +1,63 @@
+<style>
+body{
+    height: 100vh;
+    background: #0497cb;
+}
+
+.wrapper{
+    background:rgba(0,0,0,0.6);
+    height: 100vh;
+}
+.time,.head-nav{display: none;}
+</style>
+
+        <div class="card card-container" ng-hide='changePassword'>
+            <h1 class="login-title">Login to Your Account</h1>
+            <p id="profile-name" class="profile-name-card"></p>
+
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+               <input type="text" name="username" class="form-control" id="globId" placeholder="Global Id" ng-disabled="disableGID"  ng-model="globalId" required autofocus />
+                <input ng-show="!disableGID" type="password" class="form-control" id="pwd" placeholder="Password" ng-disabled="false"  ng-model="pswd"/>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" ng-disabled="disableLogin"  id="Login" type="submit" ng-click="onSubmit()">Sign in</button>
+
+                <!-- div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div -->
+            </form>
+            <a href="javascript:void(0)" ng-click="showChangePassword()" ng-if="!disableGID" class="forgot-password">
+                Change Password?
+            </a>
+        </div><!-- /card-container -->
+
+
+<div class="card card-container change-pass-container" ng-show='changePassword'>
+            <h1 class="login-title">Change Your Password</h1>
+            <form class="form-signin">
+               <input type="text" name="username" class="form-control" id="globId" placeholder="Global Id" ng-disabled="false"  ng-model="globalId" required autofocus />
+                <input type="password" class="form-control" placeholder="Old Password" ng-model="oldPswd" required />
+                <input type="password" class="form-control" placeholder="New Password" ng-model="newPswd" required />
+                <input type="password" class="form-control" placeholder="Confirm New Password" ng-model="cnfNewPswd" required />
+                <button class="btn btn-lg btn-primary btn-block btn-signin" ng-disabled="!globalId || !oldPswd || !newPswd || !cnfNewPswd" type="button" ng-click="fncChangePassword()">Change Password</button>
+            </form>
+            <a href="javascript:void(0)" ng-click="showLogin()" class="forgot-password">
+                Login
+            </a>
+        </div><!-- /card-container -->
+
+    </div>
+     <script>
+    
+      $(document).ready(function(){ 
+     document.getElementById("wrapperDiv").style.marginLeft= "0";
+   
+  
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+
+});
+      </script>

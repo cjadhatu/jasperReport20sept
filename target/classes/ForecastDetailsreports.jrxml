@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ForecastDetailsreports" pageWidth="43200" pageHeight="360000" columnWidth="43200" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="397"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.1" value="N-1(MM YYYY)"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.2" value="N(MM YYYY)"/>
+	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.3" value="N+1(MM YYYY)"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.4" value="N+2 (MM YYYY)"/>
+	<property name="net.sf.jasperreports.export.xls.sheet.names.5" value="Top  opportunities LOB wise"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\HeroKu\\Ireport\\"]]></defaultValueExpression>
+	</parameter>
+	
+	<field name = "forecastDetailsReportNminus1List" class = "java.util.List"/>
+	<field name = "forecastDetailsReportCMList" class = "java.util.List"/>
+	<field name = "forecastDetailsReportNplus1List" class = "java.util.List"/>
+	<field name = "forecastDetailsReportNplus2List" class = "java.util.List"/>
+	<field name = "forecastDetailsReportLobWiseList" class = "java.util.List"/>
+	
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="1807">
+			<subreport>
+				<reportElement x="0" y="0" width="574" height="123"/>
+			<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{forecastDetailsReportNminus1List})</dataSourceExpression>
+				<subreportExpression><![CDATA["ForecastDetailsreports_subreportN-1.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="152" width="588" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="185" width="574" height="100"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{forecastDetailsReportCMList})</dataSourceExpression>
+				<subreportExpression><![CDATA["ForecastDetailsreports_subreportCM.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="309" width="100" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="332" width="574" height="100"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{forecastDetailsReportNplus1List})</dataSourceExpression>
+				<subreportExpression><![CDATA["ForecastDetailsreports_subreportNPlus1.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="473" width="100" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="689" width="574" height="154"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{forecastDetailsReportLobWiseList})</dataSourceExpression>
+				<subreportExpression><![CDATA["ForecastDetailsreports_subreportLOBWise.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="665" width="574" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="500" width="574" height="141"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression> -->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{forecastDetailsReportNplus2List})</dataSourceExpression>
+				<subreportExpression><![CDATA["ForecastDetailsreports_subreportNPlus2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

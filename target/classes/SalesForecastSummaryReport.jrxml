@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesForecastSummaryReport" pageWidth="43000" pageHeight="360000" whenNoDataType="AllSectionsNoDetail" columnWidth="43000" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="368"/>
+	<property name="net.sf.jasperreports.export.xls.one.page.per.sheet" value="true"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\HeroKu\\Ireport\\SalesForecastSummaryReport\\"]]></defaultValueExpression>
+	</parameter>
+	<field name = "SalesForecastSummaryReportNminus2List" class = "java.util.List"/>
+	<field name = "SalesForecastSummaryReportNminus1List" class = "java.util.List"/>
+	<field name = "SalesForecastSummaryReportCMList" class = "java.util.List"/>
+	<field name = "SalesForecastSummaryReportLobWiseList" class = "java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="1540" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="307" width="583" height="100"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{SalesForecastSummaryReportCMList})</dataSourceExpression>
+				<subreportExpression><![CDATA["SalesForecastSummaryReport_subreportCM.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="459" width="316" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="483" width="583" height="100"/>
+				<!--<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+				<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{SalesForecastSummaryReportLobWiseList})</dataSourceExpression>
+				<subreportExpression><![CDATA["SalesForecastSummaryReport_subreportLOBWise.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="0" width="583" height="100"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{SalesForecastSummaryReportNminus2List})</dataSourceExpression>
+				<subreportExpression><![CDATA["SalesForecastSummaryReport_subreportN-2.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="129" width="100" height="1"/>
+			</break>
+			<subreport>
+				<reportElement x="0" y="147" width="583" height="100"/>
+			<!--	<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>-->
+			<dataSourceExpression>new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{SalesForecastSummaryReportNminus1List})</dataSourceExpression>
+				<subreportExpression><![CDATA["SalesForecastSummaryReport_subreportN-1.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="276" width="100" height="1"/>
+			</break>
+		</band>
+	</summary>
+</jasperReport>
